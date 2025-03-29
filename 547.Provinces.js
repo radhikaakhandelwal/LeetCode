@@ -28,6 +28,13 @@ var findCircleNum = function(isConnected) {
     return count
 };
 
+// The adjacency matrix is of size n x n.
+// Outer loop runs n times.
+// Each call to helper(i) does a DFS over the connected nodes.
+// In the worst case, the DFS will visit all n nodes and check each connection, which is n connections per node.
+// So total work done across all DFS calls is:
+// Time Complexity = O(n²)
+
 //    0 1 2
 // 0 [1,1,0]
 // 1 [1,1,0]
