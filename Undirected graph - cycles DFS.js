@@ -6,7 +6,7 @@
 const adj = {
   1: [2, 3],
   2: [1, 5],
-  3: [1, 4, 5],
+  3: [1, 4, 6],
   4: [3],
   5: [2, 7],
   6: [3, 7],
@@ -25,7 +25,7 @@ function isCycle(adj, v){
       
     for(let a of arr){
       if(vis[a] === 0){
-        ifdetectCycleDFS([a, i]) return true
+        if (detectCycleDFS([a, i])) return true
       } 
       else if(a !== parent) return true
     }
@@ -34,7 +34,7 @@ function isCycle(adj, v){
     
   
 
-  for(let i = 1; i < v+1; i++){
+  for(let i = 1; i < v + 1; i++){
     if(vis[i] === 0){
       if(detectCycleDFS(i, -1)) return true
       // we send -1 for parent because if the node is not been visted yet means its a new start and does not come from some old node
@@ -43,4 +43,4 @@ function isCycle(adj, v){
   return false
 }
 
-detectCycle(adj, v)
+isCycle(adj, v)
