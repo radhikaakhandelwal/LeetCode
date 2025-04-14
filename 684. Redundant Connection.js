@@ -2,6 +2,13 @@
  * @param {number[][]} edges
  * @return {number[]}
  */
+
+// Creating rank and parent arrays takes O(N).
+// ultimatePar(x) takes O(α(N)) time due to path compression.
+// union(u, v) - each union operation also takes O(α(N))
+// Main for-loop over edges once O(N) 
+// Final Time Complexity: O(N⋅α(N))
+
 var findRedundantConnection = function(edges) {
     let rank = new Array(edges.length+1).fill(0)
     let parent = new Array(edges.length+1).fill()
